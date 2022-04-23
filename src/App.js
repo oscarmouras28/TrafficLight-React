@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [Color, setColor] = useState("TrafficLight orange red green")
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <ul className={Color}>
+          <li onClick={()=>{setColor("TrafficLight orange redSelected green")}}></li>
+          <li onClick={()=>{setColor("TrafficLight orangeSelected red green")}}></li>
+          <li onClick={()=>{setColor("TrafficLight orange red greenSelected")}}></li>
+        </ul>
+        <div style={{clear: "both"}}></div>
+      </div>
     </div>
   );
 }
